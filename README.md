@@ -6,7 +6,7 @@ npm install
 ```
 
 ## Project test
-### You may test this server before serving, bun you need to globally install __"nodeman"__ before doing a test.
+### You need to globally install **"nodeman"** before doing a test.
 ```
 npm install -g nodemon
 npm run test
