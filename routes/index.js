@@ -13,7 +13,6 @@ router.use("/countries", countries);
 router.use("/category", category);
 
 router.get("/region", (req, res, next) => {
-    /*
     request("http://169.254.169.254/latest/meta-data/placement/region", (error, response, body) => {
         if (!error) {
             res.send({ok: true, data: body});
@@ -21,10 +20,9 @@ router.get("/region", (req, res, next) => {
             res.send({ok: false, message: error});
         }
     });
-    */
 
     // 로컬 테스팅용
-    res.send({ ok: true, data: 'me-south-1' });
+    // res.send({ ok: true, data: 'me-south-1' });
 });
 
 module.exports = router;
