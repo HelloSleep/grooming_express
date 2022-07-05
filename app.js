@@ -5,7 +5,7 @@ require('dotenv').config();
 const index = require('./routes/index');
 
 const app = express();
-const port = process.env.NODE_DOCKER_PORT || 3000;
+const port = process.env.DOCKER_INTERNAL_PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,5 +26,9 @@ app.get("/health-check", (req, res, next) => {
 });
 
 app.listen(port, () => {
-    console.log(`App is now listening on port ${port}`);
+    console.log("\n------------------------------[INFO]------------------------------");
+    console.log(`DOCKER_INTERNAL_PORT : ${process.env.DOCKER_INTERNAL_PORT}`);
+    console.log(`REGION : ${process.env.REGION}`);
+    console.log(`AVAILABILITY_ZONE : ${process.env.AVAILABILITY_ZONE}`);
+    console.log("------------------------------------------------------------------\n");
 });
