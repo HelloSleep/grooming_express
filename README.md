@@ -1,21 +1,21 @@
 # vue-project-2022
 
 ## Project setup
+
+### Project build
 ```
-npm install
+docker build -t grooming_express:latest .
 ```
 
-## Project test
-### You need to globally install **"nodeman"** before doing a test.
+### Project run
 ```
-npm install -g nodemon
-npm run test
+docker run -it --name grooming_server grooming_express:latest
 ```
 
-### Serve for production
+### Project run (Instant Testing)
 ```
-npm run serve
+docker run -it --name grooming_server --rm grooming_express:latest
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Container -> Host connection?
+See [Official Docker Reference](https://docs.docker.com/desktop/networking/) or [Korean Reference](https://yoo11052.tistory.com/143)
