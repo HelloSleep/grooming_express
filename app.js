@@ -28,6 +28,7 @@ app.get("/health-check", (req, res, next) => {
 app.listen(port, () => {
     console.log("\n------------------------------[INFO]------------------------------");
     console.log(`DOCKER_INTERNAL_PORT : ${process.env.DOCKER_INTERNAL_PORT}`);
+    console.log(`DB_HOST : ${process.env.DB_HOST}`);
     console.log(`REGION : ${process.env.REGION}`);
     console.log(`AVAILABILITY_ZONE : ${process.env.AVAILABILITY_ZONE}`);
     console.log("------------------------------------------------------------------\n");
