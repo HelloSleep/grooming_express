@@ -1,14 +1,14 @@
 #!/bin/bash
-DB_HOST=host.docker.internal
+DB_HOST=terraform-20220706021622633400000001.c1j0gf008ncq.ap-northeast-2.rds.amazonaws.com
 echo "DB_HOST=$DB_HOST" > .env
 
 DB_PORT=3306
 echo "DB_PORT=$DB_PORT" >> .env
 
-DB_USER=root
+DB_USER=admin
 echo "DB_USER=$DB_USER" >> .env
 
-DB_PASSWORD=p@ssw0rd
+DB_PASSWORD=password
 echo "DB_PASSWORD=$DB_PASSWORD" >> .env
 
 DB_DATABASE=shipping
