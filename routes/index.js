@@ -13,17 +13,13 @@ router.use("/countries", countries);
 router.use("/category", category);
 
 router.get("/region", (req, res, next) => {
-    if (!process.env.REGION) {
-        request("http://169.254.169.254/latest/meta-data/placement/region", (error, response, body) => {
-            if (!error) {
-                res.send({ ok: true, data: body });
-            } else {
-                res.send({ ok: false, message: error });
-            }
-        });
-    } else {
-        res.send({ ok: true, data: process.env.REGION });
-    }
+    request("http://169.254.169.254/latest/meta-data/placement/region", (error, response, body) => {
+        if (!error) {
+            res.send({ ok: true, data: body });
+        } else {
+            res.send({ ok: false, message: error });
+        }
+    });
 });
 
 module.exports = router;
